@@ -36,7 +36,7 @@ def sample_trajectory(env, policy, max_path_length, render=False):
         
         output = policy(ptu.from_numpy(ob))
 
-        if hasattr(output, "sample"):
+        if hasattr(output, 'sample'):
             ac = output.sample().detach().cpu().numpy().flatten() # HINT: this is a numpy array
         else: 
             ac = output.detach().cpu().numpy().flatten()
